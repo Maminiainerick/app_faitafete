@@ -11,15 +11,12 @@
           @click="toggleLeftDrawer"
         />
 
-
-        <q-toolbar-title class="row full-height justify-center">
-          <q-avatar>
-            <img src="../assets/Logo1.png">
-          </q-avatar>
+        <q-toolbar-title class="row justify-center">
+          <logo-img/>
         </q-toolbar-title>
 
-        <div class="q-pa-md">
-          <q-icon name="eva-person-outline" style="font-size: 30px;" />
+        <div>
+          <avatar-button></avatar-button>
         </div>
       </q-toolbar>
     </q-header>
@@ -99,11 +96,15 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from 'vue'
+import LogoImg from "components/logoImg";
+import AvatarButton from "components/avatarButton";
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
+    AvatarButton,
+    LogoImg,
     EssentialLink
   },
 

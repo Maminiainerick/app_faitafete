@@ -1,5 +1,9 @@
 <template>
-  <div>BONJOUR MONSIEUR JEsssss SUIS SUZY et j'aime le kiri</div>
+  <q-btn
+    round color="primary"
+    icon="eva-person-outline"
+    to="login"
+  />
 </template>
 
 <script>
