@@ -11,11 +11,16 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
+
+        <q-toolbar-title class="row full-height justify-center">
+          <q-avatar>
+            <img src="../assets/Logo1.png">
+          </q-avatar>
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div class="q-pa-md">
+          <q-icon name="eva-person-outline" style="font-size: 30px;" />
+        </div>
       </q-toolbar>
     </q-header>
 
