@@ -14,7 +14,7 @@
 
         <q-toolbar-title class="row full-height justify-center">
           <q-avatar>
-            <img src="../assets/Logo1.png">
+            <img src="../assets/Logo%201.png">
           </q-avatar>
         </q-toolbar-title>
 
