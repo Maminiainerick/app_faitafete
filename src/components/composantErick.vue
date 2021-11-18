@@ -1,5 +1,5 @@
 <template>
-  <div>My component</div>
+  <div>Composant Erick</div>
 </template>
 
 <script>

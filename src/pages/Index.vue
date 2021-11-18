@@ -5,13 +5,16 @@
       src="~assets/quasar-logo-vertical.svg"
       style="width: 200px; height: 200px"
     >
+    <composant-erick></composant-erick>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import ComposantErick from "components/composantErick";
 
 export default defineComponent({
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {ComposantErick}
 })
 </script>
