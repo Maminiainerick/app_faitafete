@@ -1,6 +1,6 @@
 <template>
-  <q-page padding>
-    <q-input filled v-model="email" label="texte" />
+  <q-page>
+    <h1>Essai</h1>
   </q-page>
 </template>
 
