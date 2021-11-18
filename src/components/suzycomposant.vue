@@ -1,5 +1,5 @@
 <template>
-  <div>My component</div>
+  <div>BONJOUR MONSIEUR JEsssss SUIS SUZY et j'aime le kiri</div>
 </template>
 
 <script>
