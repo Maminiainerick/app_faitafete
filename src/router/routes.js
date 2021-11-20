@@ -1,17 +1,45 @@
+/*
+  Importation des layouts
+ */
+import lMainStandard from 'layouts/MainStandardLayout'
+import lLogin from 'layouts/loginLayout'
+import lLogged from 'layouts/MainLoggedInLayout'
+
+/*
+  Importation des différentes pages
+ */
+import pStandardIndex from 'pages/StandardIndexPage'
+import pLogin from 'pages/loginPage'
+import pLoggedIndex from 'pages/IndexConnectedPage'
+import pProfile from 'pages/ProfilePage'
+import pFacebookConnect from 'pages/LinkProfileFacebookPage'
+import pGoogleConnect from 'pages/LinkProfileGooglePage'
+import pMyEvents from 'pages/ListMyEventsPage'
 
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: lMainStandard,
     children: [
-      { path: '', component: () => import('pages/Index.vue')},
+      {path: '', component: pStandardIndex},
     ]
   },
   {
     path: '/login',
-    component: () => import('layouts/loginLayout.vue'),
+    component: lLogin,
     children: [
-      {path:'', component:() => import('pages/loginPage.vue')}
+      {path: '', component: pLogin},
+      {path: 'fbLog', component: pFacebookConnect},
+      {path: 'ggLog', component: pGoogleConnect}
+    ]
+  },
+  {
+    path: '/loggedin',
+    component: lLogged,
+    children: [
+      {path: 'index', component: pLoggedIndex},
+      {path: 'profile', component: pProfile},
+      {path: 'myevents', component: pMyEvents}
     ]
   },
 
