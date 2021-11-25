@@ -1,12 +1,16 @@
 <template>
   <q-card>
     <q-card-section>
-      <div class="text-h5">
-        Bonjour,<br>Johann
+      <div class="row">
+        <div class="col">
+          <div class="text-h5 text-bold">
+            Bonjour,<br>Johann
+          </div>
+        </div>
+        <div class="col">
+          <option-section-card/>
+        </div>
       </div>
-    </q-card-section>
-    <q-card-section>
-      <option-section-card/>
     </q-card-section>
   </q-card>
 </template>

@@ -59,7 +59,7 @@
     </div>
     <div class="q-pa-md items-start q-gutter-md">
       <q-card style="background: rgba(239,143,136,0.29)">
-        <q-item>
+        <q-item clickable to="/loggedin/myagenda">
           <q-item-section>
             <div class="row">
               <div class="col-1">
@@ -75,7 +75,7 @@
         </q-item>
       </q-card>
       <q-card style="background: rgba(111,145,181,0.32)">
-        <q-item>
+        <q-item clickable to="/loggedin/myevents">
           <q-item-section>
             <div class="row">
               <div class="col-1">
@@ -91,7 +91,7 @@
         </q-item>
       </q-card>
       <q-card style="background: rgba(239,143,136,0.29)">
-        <q-item>
+        <q-item clickable to="/message">
           <q-item-section>
             <div class="row">
               <div class="col-1">
@@ -108,9 +108,9 @@
       </q-card>
     </div>
     <div class="q-pa-md q-gutter-sm">
-      <q-btn color="primary" flat rounded label="Modifier le profil"/>
+      <q-btn color="primary" flat rounded label="Modifier le profil" to="/loggedin/modifprofile"/>
       <q-btn color="secondary" flat rounded label="Se déconnecter" to="/" @click="showNotificationDisconnect"/>
-      <q-btn color="red-3" flat rounded label="Supprimer le profil"/>
+      <q-btn color="red-3" flat rounded label="Supprimer le profil" @click="customBtn"/>
     </div>
 
   </q-page>
@@ -133,7 +133,31 @@ export default {
           message: 'Vous êtes déconnecté !',
           color: 'primary'
         })
-      }
+      },
+      customBtn: function () {
+      $q.dialog({
+        title: 'Supprimer le profil',
+        message: 'Vous êtes sûr(e) de vouloir supprimer votre profil ?',
+        ok: {
+          push: true,
+          color: 'negative',
+          label: 'Oui, supprimer mon profil'
+        },
+        cancel: {
+          push: true,
+          color: 'primary',
+          label: 'Annuler'
+        },
+        persistent: true
+      }).onOk(() => {
+
+        // console.log('>>>> OK')
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      }).onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      })
+    }
     }
   }
 }
