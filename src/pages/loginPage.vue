@@ -21,7 +21,7 @@
             <q-btn unelevated to="/" color="primary" size="lg" class="full-width" label="Se connecter" />
           </q-card-actions>
           <q-card-section class="text-center q-pa-none">
-            <p class="text-grey-6">Not registered? Created an Account</p>
+            <q-btn flat class="text-red-4" label="Créer un compte" no-caps to="/signUp"/>
           </q-card-section>
         </q-card>
       </div>
