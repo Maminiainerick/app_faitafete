@@ -16,7 +16,11 @@
         </q-toolbar-title>
 
         <div>
-          <avatar-button></avatar-button>
+          <q-btn
+            round color="primary"
+            icon="eva-person-outline"
+            to="login"
+          />
         </div>
       </q-toolbar>
     </q-header>
@@ -26,13 +30,34 @@
       show-if-above
       bordered
     >
-      <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-          </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
+      <q-img
+        class="absolute-top"
+        style="height: 150px">
+        <div class="absolute-bottom bg-blue-1">
+          <q-btn
+            round
+            flat
+            color="primary"
+            icon="eva-person-outline"
+            to="login"
+          />
+          <div
+            class="text-weight-bold text-primary"
+          >
+            Se connecter
+          </div>
+          <div
+            class="text-info text-black text-weight-regular">
+            Pas encore de compte ?
+          </div>
+          <div
+            class="text-info
+                   text-black
+                   text-weight-regular
+                   text-italic"
+            >
+            Inscrivez-vous
+          </div>
         </div>
       </q-img>
     </q-drawer>
@@ -54,7 +79,6 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    AvatarButton,
     LogoImg
   },
 
