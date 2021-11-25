@@ -43,6 +43,37 @@
           <q-card-section class="text-center q-pa-none">
             <q-btn flat class="text-red-4" label="Créer un compte" no-caps to="/signUp"/>
           </q-card-section>
+
+          <q-card-section class ="text-center q-pa-none">
+            <q-btn
+              size="11px"
+              no-caps
+              rounded
+              color="grey-5"
+              to="/login/ggLog"
+            >
+              <q-avatar size="25px">
+                <img src="../assets/logo-google.png">
+              </q-avatar>
+              Connexion avec Goggle
+            </q-btn>
+          </q-card-section>
+
+          <q-card-section class ="text-center q-px-md">
+            <q-btn
+              size="11px"
+              no-caps
+              rounded
+              color="grey-5"
+              to="/login/fbLog"
+            >
+              <q-avatar size="25px">
+                <img src="../assets/logoFb.png">
+              </q-avatar>
+              Connexion avec Facebook
+            </q-btn>
+          </q-card-section>
+
         </q-card>
       </div>
     </div>
@@ -56,6 +87,8 @@ export default {
   components: {},
   data() {
     return {
+      onClick(){
+      },
       email: '',
       password: ''
     }

@@ -57,12 +57,14 @@
           <q-btn
             color="blue-13"
             class="full-width"
-            label="Continuer sur votre profil"/>
+            label="Continuer sur votre profil"
+            to="/loggedin/index"/>
         </div>
         <div class="col">
           <q-btn
             class="full-width"
-            label="Annuler"/>
+            label="Annuler"
+            to="/"/>
         </div>
       </div>
       <div class="column items-center justify-evenly self-center" style="height: 100px">
