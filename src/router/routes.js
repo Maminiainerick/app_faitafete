@@ -4,6 +4,8 @@
 import lMainStandard from 'layouts/MainStandardLayout'
 import lLogin from 'layouts/loginLayout'
 import lLogged from 'layouts/MainLoggedInLayout'
+import lMessage from 'layouts/ListMessagesLayout'
+import lCorps from 'layouts/CorpsMessageLayout'
 
 /*
   Importation des différentes pages
@@ -15,6 +17,11 @@ import pProfile from 'pages/ProfilePage'
 import pFacebookConnect from 'pages/LinkProfileFacebookPage'
 import pGoogleConnect from 'pages/LinkProfileGooglePage'
 import pMyEvents from 'pages/ListMyEventsPage'
+import pModifProfile from 'pages/ModificationProfilePage'
+import pCreate from 'pages/CreateEventPage'
+import pAgenda from 'pages/AgendaPage'
+import pMessages from 'pages/ListMessagesPage'
+import pMessage1 from 'pages/MessagePage'
 
 const routes = [
   {
@@ -39,7 +46,24 @@ const routes = [
     children: [
       {path: 'index', component: pLoggedIndex},
       {path: 'profile', component: pProfile},
-      {path: 'myevents', component: pMyEvents}
+      {path: 'myevents', component: pMyEvents},
+      {path: 'modifprofile', component: pModifProfile},
+      {path: 'createvents', component: pCreate},
+      {path: 'myagenda', component: pAgenda}
+    ]
+  },
+  {
+    path: '/message',
+    component: lMessage,
+    children: [
+      {path: '', component: pMessages},
+    ]
+  },
+  {
+    path:'/corps',
+    component: lCorps,
+    children: [
+      {path: '', component: pMessage1}
     ]
   },
 
