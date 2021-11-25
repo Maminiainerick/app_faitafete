@@ -12,7 +12,7 @@
       />
       <q-chat-message
         name="Guy"
-        avatar="https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1637808837~hmac=ab0c9dcfd4826659967d2ad570ec371b"
+        avatar="../assets/man1.png"
         :text="['Yeeess ! Enfin j\'ai pu créé enfin mon compte Faitafete']"
       />
       <q-chat-message
@@ -23,7 +23,7 @@
       />
       <q-chat-message
         name="Guy"
-        avatar="https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1637808837~hmac=ab0c9dcfd4826659967d2ad570ec371b"
+        avatar="../assets/man1.png"
         :text="['Mais de ouf ! C\'est une grave bonne idée en vrai']"
       />
       <q-chat-message
