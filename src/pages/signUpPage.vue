@@ -20,28 +20,23 @@
                 v-model="login"
                 type="login"
                 label="Pseudo *"
+                hint ="Pseudo"
                 lazy-rules
                 :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
               />
 
               <q-input
-                square filled clearable v-model="email"
-                type="email"
-                label="Email *"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
-              />
-
-              <q-input
+                square
                 filled
                 clearable
                 v-model="email"
                 type="email"
                 label="Email *"
-                hint="email"
+                hint="Email"
                 lazy-rules
                 :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
               />
+
 
               <q-input
                 filled
@@ -49,19 +44,11 @@
                 v-model="password"
                 type="password"
                 label="Password *"
+                hint="Mot de passe"
                 lazy-rules
                 :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
               />
 
-              <q-input
-                filled
-                clearable
-                v-model="password"
-                type="password"
-                label="password *"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
-              />
 
               <q-toggle
                 v-model="accept"
