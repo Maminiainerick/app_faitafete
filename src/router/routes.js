@@ -64,6 +64,10 @@ const routes = [
     component: lCorps,
     children: [
       {path: '', component: pMessage1}
+      {path:'', component:() => import('pages/loginPage.vue')},
+      {path:'/signUp', component:() => import ('pages/signUpPage.vue')},
+      {path:'/signUp2', component:()=> import ('pages/signUpPage2.vue')}
+
     ]
   },
 
