@@ -12,11 +12,18 @@
         />
 
         <q-toolbar-title class="row justify-center">
-          <logo-img/>
+          <logo-img to="/loggedin/index"/>
         </q-toolbar-title>
 
         <div>
-          <avatar-button></avatar-button>
+          <q-btn
+            round
+            to="/loggedin/profile"
+          >
+            <q-avatar size="42px">
+              <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+            </q-avatar>
+          </q-btn>
         </div>
       </q-toolbar>
     </q-header>
@@ -54,7 +61,6 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    AvatarButton,
     LogoImg
   },
 
