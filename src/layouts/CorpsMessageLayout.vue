@@ -9,8 +9,7 @@
             to="/message"
           >
             <q-avatar>
-              <img
-                src="https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1637808837~hmac=ab0c9dcfd4826659967d2ad570ec371b">
+              <img src="../assets/man1.png">
             </q-avatar>
             Guy Tard
           </q-item>

@@ -37,7 +37,9 @@ const routes = [
     children: [
       {path: '', component: pLogin},
       {path: 'fbLog', component: pFacebookConnect},
-      {path: 'ggLog', component: pGoogleConnect}
+      {path: 'ggLog', component: pGoogleConnect},
+      {path:'/signUp', component:() => import ('pages/signUpPage.vue')},
+      {path:'/signUp2', component:()=> import ('pages/signUpPage2.vue')}
     ]
   },
   {
@@ -63,11 +65,7 @@ const routes = [
     path:'/corps',
     component: lCorps,
     children: [
-      {path: '', component: pMessage1}
-      {path:'', component:() => import('pages/loginPage.vue')},
-      {path:'/signUp', component:() => import ('pages/signUpPage.vue')},
-      {path:'/signUp2', component:()=> import ('pages/signUpPage2.vue')}
-
+      {path: '', component: pMessage1},
     ]
   },
 

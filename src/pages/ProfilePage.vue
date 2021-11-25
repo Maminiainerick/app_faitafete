@@ -141,7 +141,8 @@ export default {
         ok: {
           push: true,
           color: 'negative',
-          label: 'Oui, supprimer mon profil'
+          label: 'Oui, supprimer mon profil',
+          onclick: "document.location.href=\'http://localhost:8080/#/'"
         },
         cancel: {
           push: true,
