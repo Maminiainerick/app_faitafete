@@ -93,10 +93,10 @@
         <q-card-section>
           <div class="row justify-center">
             <div class="col-4">
-              <q-btn no-caps label="Annuler"/>
+              <q-btn no-caps label="Annuler" to="/"/>
             </div>
             <div class="col-4">
-              <q-btn no-caps label="Autoriser"/>
+              <q-btn no-caps label="Connexion" to="/loggedin/index"/>
             </div>
           </div>
         </q-card-section>
