@@ -21,14 +21,17 @@
                 clearable
                 v-model="email"
                 type="email"
-                label="email"/>
+                label="email"
+              />
+
               <q-input
                 square
                 filled
                 clearable
                 v-model="password"
                 type="password"
-                label="password"/>
+                label="password"
+              />
             </q-form>
           </q-card-section>
           <q-card-actions class="q-px-md">
@@ -38,7 +41,9 @@
               color="primary"
               size="lg"
               class="full-width"
-              label="Se connecter"/>
+              label="Se connecter"
+            />
+
           </q-card-actions>
           <q-card-section class="text-center q-pa-none">
             <q-btn flat class="text-red-4" label="Créer un compte" no-caps to="/signUp"/>

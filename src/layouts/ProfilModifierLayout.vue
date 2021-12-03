@@ -12,11 +12,18 @@
         />
 
         <q-toolbar-title class="row justify-center">
-          <logo-img/>
+          <logo-img to="/loggedin/index"/>
         </q-toolbar-title>
 
         <div>
-          <avatar-button></avatar-button>
+          <q-btn
+            round
+            to="/loggedin/profile"
+          >
+            <q-avatar size="42px">
+              <img src="https://cdn-s-www.estrepublicain.fr/images/BFFFE250-24DD-44A1-B140-6A9229B524FB/NW_raw/photo-dr-1573744884.jpg">
+            </q-avatar>
+          </q-btn>
         </div>
       </q-toolbar>
     </q-header>
@@ -54,7 +61,6 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    AvatarButton,
     LogoImg
   },
 
