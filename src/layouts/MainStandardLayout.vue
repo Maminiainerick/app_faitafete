@@ -44,7 +44,7 @@
           <div
             class="text-weight-bold text-primary"
           >
-            Se connecter
+            <q-btn flat to="login" no-caps>Se connecter</q-btn>
           </div>
           <div
             class="text-info text-black text-weight-regular">
@@ -56,7 +56,7 @@
                    text-weight-regular
                    text-italic"
             >
-            Inscrivez-vous
+            <q-btn flat to="login/signUp" no-caps>Inscrivez-vous</q-btn>
           </div>
         </div>
       </q-img>
