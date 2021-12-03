@@ -22,6 +22,8 @@ import pCreate from 'pages/CreateEventPage'
 import pAgenda from 'pages/AgendaPage'
 import pMessages from 'pages/ListMessagesPage'
 import pMessage1 from 'pages/MessagePage'
+import pEmptyEvent from 'pages/EmptyMyEvents'
+import pConference from 'pages/ConferenceEventPage'
 
 const routes = [
   {
@@ -51,7 +53,9 @@ const routes = [
       {path: 'myevents', component: pMyEvents},
       {path: 'modifprofile', component: pModifProfile},
       {path: 'createvents', component: pCreate},
-      {path: 'myagenda', component: pAgenda}
+      {path: 'myagenda', component: pAgenda},
+      {path: 'emptyevents', component: pEmptyEvent},
+      {path: 'conferenceEvent', component: pConference}
     ]
   },
   {
