@@ -8,7 +8,7 @@
 <script>
 import { defineComponent } from 'vue';
 import RechercheCard from "components/rechercheCard";
-import ListeEventCard from "components/listeEventCard";
+import ListeEventCard from "components/listeEventConnectedCard";
 
 export default defineComponent({
   name: 'StandardIndex',

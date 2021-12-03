@@ -32,36 +32,10 @@
     </q-card-section>
     <q-card-section class="q-pa-md row items-start q-gutter-md">
 
-      <q-card class="my-card">
-        <q-img src="https://cdn.quasar.dev/img/parallax2.jpg"/>
-        <q-card-section>
-          <div class="text-subtitle5">Conférence avec Emmanuel Macron</div>
-          <div class="text-info">Samedi 20 nov</div>
-        </q-card-section>
-        <q-separator/>
-        <q-card-actions>
-            <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
-            <q-space />
-            <q-btn flat round icon="eva-more-horizontal-outline" />
-        </q-card-actions>
-      </q-card>
 
       <q-card class="my-card">
-        <q-img src="https://cdn.quasar.dev/img/mountains.jpg"/>
-        <q-card-section>
-          <div class="text-subtitle5">Randonnée en montagne</div>
-          <div class="text-info">Jeudi 18 nov</div>
-        </q-card-section>
-        <q-separator/>
-        <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
-          <q-space />
-          <q-btn flat round icon="eva-more-horizontal-outline" />
-        </q-card-actions>
-      </q-card>
-
-      <q-card class="my-card">
-        <q-img src="https://cdn.quasar.dev/img/parallax2.jpg"/>
+        <q-img :ratio="16/9"
+               src="https://img.20mn.fr/IWiMLh_hRfmDkHwVUZ10Dg/640x410_emmanuel-macron-conference-presse-salle-fetes-elysee-25-avril-2019.jpg"/>
         <q-card-section>
           <div class="text-subtitle5">Conférence avec Emmanuel Macron</div>
           <div class="text-info">Samedi 20 nov</div>
@@ -69,13 +43,15 @@
         <q-separator/>
         <q-card-actions>
           <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
-          <q-space />
-          <q-btn flat round icon="eva-more-horizontal-outline" />
+          <q-space/>
+          <q-btn flat round icon="eva-more-horizontal-outline" to="/loggedin/conferenceEvent"/>
         </q-card-actions>
       </q-card>
 
+
       <q-card class="my-card">
-        <q-img src="https://cdn.quasar.dev/img/mountains.jpg"/>
+        <q-img :ratio="16/9"
+               src="https://th.bing.com/th/id/R.f19126c6f1e60b6c469965ba475e1eae?rik=rmXhbCd5iHfLZg&riu=http%3a%2f%2fwww.douvres-la-delivrande.fr%2fimages%2factualite%2f1601471526-unnamed.jpg&ehk=d84ykc5kVuRWOW3fcGxsYYtY7R95mKX9C5XQGJuq4WQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"/>
         <q-card-section>
           <div class="text-subtitle5">Randonnée en montagne</div>
           <div class="text-info">Jeudi 18 nov</div>
@@ -83,7 +59,36 @@
         <q-separator/>
         <q-card-actions>
           <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
-          <q-space />
+          <q-space/>
+          <q-btn flat round icon="eva-more-horizontal-outline"/>
+        </q-card-actions>
+      </q-card>
+
+      <q-card class="my-card">
+        <q-img :ratio="16/9"
+               src="https://th.bing.com/th/id/R.3f5ec62091a7e4d7ba76a95129774587?rik=WKhPikqETLa%2f%2fg&pid=ImgRaw&r=0"/>
+        <q-card-section>
+          <div class="text-subtitle5">Anniversaire de Johann</div>
+          <div class="text-info">Samedi 20 nov</div>
+        </q-card-section>
+        <q-separator/>
+        <q-card-actions>
+          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-space/>
+          <q-btn flat round icon="eva-more-horizontal-outline"/>
+        </q-card-actions>
+      </q-card>
+
+      <q-card class="my-card">
+        <q-img :ratio="16/9" src="https://th.bing.com/th/id/OIP.QEiQUSeDaKU5JWQKFrKdFQHaEK?pid=ImgDet&rs=1"/>
+        <q-card-section>
+          <div class="text-subtitle5">Réunion BDE Economie-Gestion</div>
+          <div class="text-info">Jeudi 18 nov</div>
+        </q-card-section>
+        <q-separator/>
+        <q-card-actions>
+          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-space/>
           <q-btn flat round icon="eva-more-horizontal-outline">
             <q-menu cover auto-close>
               <q-list>
@@ -120,6 +125,10 @@ export default {
       Proximite: false
     })
     const $q = useQuasar()
+
+    function showConferenceEvent() {
+
+    }
 
     return {
       event,
