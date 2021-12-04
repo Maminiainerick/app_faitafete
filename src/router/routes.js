@@ -24,6 +24,10 @@ import pMessages from 'pages/ListMessagesPage'
 import pMessage1 from 'pages/MessagePage'
 import pEmptyEvent from 'pages/EmptyMyEvents'
 import pConference from 'pages/ConferenceEventPage'
+import pRando from 'pages/RandoEventPage'
+import pBirthday from 'pages/BirthdayEventPage'
+import pBDE from 'pages/BdeEventPage'
+
 
 const routes = [
   {
@@ -55,7 +59,11 @@ const routes = [
       {path: 'createvents', component: pCreate},
       {path: 'myagenda', component: pAgenda},
       {path: 'emptyevents', component: pEmptyEvent},
-      {path: 'conferenceEvent', component: pConference}
+      {path: 'conference-Emmanuel-Macron-UGA', component: pConference},
+      {path: 'randonnee-Chartreuse', component: pRando},
+      {path: 'anniversaire-Johann', component: pBirthday},
+      {path: 'reunion-BDE', component: pBDE},
+
     ]
   },
   {
