@@ -48,9 +48,6 @@
                     round
                     size="10px"
                   >
-                    <q-avatar size="20px" icon="close">
-
-                    </q-avatar>
                   </q-btn>
                 </div>
               </div>
