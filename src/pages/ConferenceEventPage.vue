@@ -5,6 +5,7 @@
     <q-card flat>
       <q-card-section>
         <div class="text-bold text-center text-primary text-subtitle1">Conférence avec Emmanuel Macron</div>
+        <q-btn unelevated disable class="full-width text-capitalize" rounded color="green" label="événement public" size="sm"></q-btn>
         <div class="text-info text-center text-grey">De passage à Grenoble, le Président de la République tiendra une
           conférence avec les étudiants de l'UGA pour discuter de leur situation
         </div>
@@ -46,7 +47,8 @@
 
         <q-card-section class="q-pt-none">
           <div class="text-caption text-grey">
-            Vous êtes sur le point de vous inscrire à cet événement. Merci de confirmer votre choix en ajoutant l'événement à votre agenda
+            Vous êtes sur le point de vous inscrire à cet événement.
+            Validez votre inscription, en cliquant sur "S'inscrire"
           </div>
         </q-card-section>
 
@@ -54,7 +56,7 @@
 
         <q-card-actions align="right">
           <q-btn v-close-popup flat color="primary" label="Annuler" />
-          <q-btn flat color="primary" round icon="event" @click="showNotifAjoutAgenda"  to="/loggedin/index"/>
+          <q-btn flat color="primary" label="S'inscrire" @click="showNotifInscription"  to="/loggedin/index"/>
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -124,11 +126,10 @@ export default {
       card: ref(false),
       signaler: ref(false),
       signaler2: ref(false),
-      showNotifAjoutAgenda: function () {
+      showNotifInscription: function () {
         $q.notify({
-          progress: true,
-          message: 'Ajouté à votre agenda',
-          color: 'primary'
+          message: 'Inscription validée',
+          color: 'green'
         })
       },
       group: ref([]),
