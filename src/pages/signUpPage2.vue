@@ -40,7 +40,7 @@
       type="submit"
       color="primary"
       label="Créer un compte"
-      to="/"
+      to="/loggedin/index"
     />
   </q-form>
 </template>
