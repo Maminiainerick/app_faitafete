@@ -24,7 +24,7 @@
         </div>
       </q-card-section>
       <q-card-actions>
-        <q-btn push size="sm" padding="sm md" rounded color="primary" label="Modifier"/>
+        <q-btn push size="sm" padding="sm md" rounded color="primary" label="Modifier" to="/loggedin/modification-profil"/>
         <q-btn rounded size="sm" padding="sm md" outline color="dark" label="Supprimer" @click="supprBtn"/>
       </q-card-actions>
     </q-card>
