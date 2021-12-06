@@ -5,20 +5,20 @@
           <greeting-section-card flat/>
       </div>
     </div>
-
     <recherche-card/>
-    <liste-event-card/>
+    <list-event-connected-card/>
+
   </q-page>
 </template>
 
 <script>
 import {defineComponent} from 'vue';
 import RechercheCard from "components/rechercheCard";
-import ListeEventCard from "components/listeEventCard";
+import ListEventConnectedCard from "components/listeEventConnectedCard";
 import GreetingSectionCard from "components/greetingSectionCard";
 
 export default defineComponent({
   name: 'PageIndex',
-  components: {GreetingSectionCard, ListeEventCard, RechercheCard}
+  components: {GreetingSectionCard, ListEventConnectedCard, RechercheCard}
 })
 </script>
