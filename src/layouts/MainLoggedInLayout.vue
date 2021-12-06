@@ -46,12 +46,8 @@
                   <q-btn
                     flat
                     round
-                    v-model="leftDrawerOpen"
                     size="10px"
                   >
-                    <q-avatar size="20px" icon="close">
-
-                    </q-avatar>
                   </q-btn>
                 </div>
               </div>
@@ -85,7 +81,7 @@
         <q-list>
 
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple :to="menuItem.root">
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon"/>
               </q-item-section>
@@ -125,22 +121,26 @@ export default defineComponent({
       {
         icon: 'calendar_today',
         label: 'Mes événements',
-        separator: true
+        root: '/loggedin/myevents',
+        separator: false
       },
       {
         icon: 'view_agenda',
         label: 'Mon agenda',
+        root: '/loggedin/myagenda',
         separator: false
       },
       {
         icon: 'message',
         label: 'Ma messagerie',
+        root: '/message',
         separator: false
       },
       {
         icon: 'settings',
         label: 'Paramètres',
-        separator: true
+        root: '/loggedin/modifprofile',
+        separator: false
       }
     ]
 
