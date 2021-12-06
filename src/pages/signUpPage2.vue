@@ -1,88 +1,76 @@
 <template>
-  <q-page class="bg-primary row justify-center items-center">
+  <q-form @submit.prevent="submitForm">
+    <q-input
+      outlined
+      v-model="form.name"
+      label="Nom d'utilisateur"
+      class="q-my-md"
+      :rules="[ val => val.length >= 4 || 'Minimum 4 caractère']"
+    />
 
-    <div class="q-pa-md" style="max-width: 400px">
+    <q-input
+      outlined
+      v-model="form.email"
+      label="E-mail"
+      class="q-my-md"
+      :rules="[val => validateEmail(val) || 'Email invalide']"
+    />
 
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-gutter-md"
-      >
-        <q-input
-          filled
-          v-model="name"
-          label="Your name *"
-          hint="Name and surname"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
+    <q-input
+      type="password"
+      outlined
+      v-model="form.password"
+      label="Mot de passe"
+      class="q-my-md"
+      :rules="[ val => val.length >= 4 || 'Minimum 4 caractère']"
+      lazy-rules
+    />
 
-        <q-input
-          filled
-          type="number"
-          v-model="age"
-          label="Your age *"
-          lazy-rules
-          :rules="[
-          val => val !== null && val !== '' || 'Please type your age',
-          val => val > 0 && val < 100 || 'Please type a real age'
-        ]"
-        />
+    <q-input
+      type="password"
+      outlined
+      v-model="form.password_confirmation"
+      label="Confirmer le mot de passe"
+      class="q-my-md"
+      :rules="[ val => val === form.password || 'Les mots de passe sont différents']"
+      lazy-rules
+    />
 
-        <q-toggle v-model="accept" label="I accept the license and terms" />
-
-        <div>
-          <q-btn label="Submit" type="submit" color="primary"/>
-          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-        </div>
-      </q-form>
-
-    </div>
-  </q-page>
+    <q-btn
+      type="submit"
+      color="primary"
+      label="Créer un compte"
+      to="/"
+    />
+  </q-form>
 </template>
 
 <script>
-import { useQuasar } from 'quasar'
-import { ref } from 'vue'
-
 export default {
-  setup () {
-    const $q = useQuasar()
-
-    const name = ref(null)
-    const age = ref(null)
-    const accept = ref(false)
-
+  name: 'EnregistrementForm',
+  data () {
     return {
-      name,
-      age,
-      accept,
-
-      onSubmit () {
-        if (accept.value !== true) {
-          $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
-            message: 'You need to accept the license and terms first'
-          })
-        }
-        else {
-          $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted'
-          })
-        }
-      },
-
-      onReset () {
-        name.value = null
-        age.value = null
-        accept.value = false
+      form: {
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
       }
+    }
+  },
+  methods: {
+    submitForm () {
+      alert('Formulaire envoyé !')
+    },
+    validateEmail (email) {
+      // Source : https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(String(email).toLowerCase())
     }
   }
 }
 </script>
+
+<style>
+
+</style>

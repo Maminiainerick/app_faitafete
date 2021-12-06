@@ -3,72 +3,40 @@
 
     <div class="column">
       <div class="row justify-center">
-        <h5 class="text-h5 text-white q-my-md">Page d'inscription</h5>
+        <h5 class="text-h5 text-white q-my-md">Inscription</h5>
       </div>
       <div class="row justify-center">
         <q-card class="my-card">
           <q-card-section>
-            <q-form
-              @submit="onSubmit"
-              @reset="onReset"
-              class="q-gutter-md">
-
+            <form @submit.prevent.stop="onSubmit" @reset.prevent.stop="onReset" class="q-gutter-md">
               <q-input
-                square
+                ref="emailRef"
                 filled
-                clearable
-                v-model="login"
-                type="login"
-                label="Pseudo *"
-                hint ="Pseudo"
-                lazy-rules
-                :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
-              />
-
-              <q-input
-                square
-                filled
-                clearable
                 v-model="email"
-                type="email"
-                label="Email *"
-                hint="Email"
+                label="email *"
+                hint="email"
                 lazy-rules
-                :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
+                :rules="emailRules"
               />
-
 
               <q-input
+                ref="mdpRef"
                 filled
-                clearable
-                v-model="password"
                 type="password"
-                label="Password *"
-                hint="Mot de passe"
+                v-model="password"
+                label="votre mdp *"
                 lazy-rules
-                :rules="[val => val && val.length > 0 || 'Veuillez entrer quelque chose']"
+                :rules="mdpRules"
               />
 
+              <q-toggle v-model="accept" label="I accept the license and terms" />
 
-              <q-toggle
-                v-model="accept"
-                label="J'accepte la license"
-              />
-
-            </q-form>
-
+              <div>
+                <q-btn label="Submit" color="primary" @click="onSubmit"/>
+                <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+              </div>
+            </form>
           </q-card-section>
-
-          <q-card-actions class="q-px-md">
-            <q-btn
-              unelevated
-              to="/signUp2"
-              color="primary"
-              size="lg"
-              class="full-width"
-              label="S'inscrire"
-            />
-          </q-card-actions>
 
           <q-card-section class="text-center q-pa-none">
             <q-btn
@@ -115,47 +83,65 @@
 </template>
 
 <script>
-import {useQuasar} from "quasar";
-import {ref} from 'vue'
+import { useQuasar } from 'quasar'
+import { ref } from 'vue'
 
 export default {
-  name: 'signUp',
-
   setup () {
-    const accept = ref(false)
-    const $q =useQuasar()
+    const $q = useQuasar()
 
-    const login = ref(null)
     const email = ref(null)
-    const password = ref(null)
+    const emailRef = ref(null)
+
+    const mdp = ref(null)
+    const mdpRef = ref(null)
+
+    const accept = ref(false)
+
     return {
-      login,
       email,
-      password,
+      emailRef,
+      emailRules: [
+        val => (val && val.length > 0) || 'Please type something'
+      ],
+
+      mdp,
+      mdpRef,
+      mdpRules: [
+        val => (val && val.length > 0) || 'Please type something'
+      ],
+
       accept,
 
       onSubmit () {
-        if (accept.value !== true) {
+        emailRef.value.validate()
+        mdpRef.value.validate()
+
+        if (emailRef.value.hasError || mdpRef.value.hasError) {
+          // form has error
+        }
+        else if (accept.value !== true) {
           $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
+            color: 'negative',
             message: 'You need to accept the license and terms first'
           })
-        } else {
+        }
+        else {
           $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted'
+            icon: 'done',
+            color: 'positive',
+            message: 'Submitted',
+            onclick: "document.location.href=\'http://localhost:8080/#/signUp2'"
           })
         }
       },
-      onReset(){
-        login.value = null
-        email.value=null
-        password.value=null
-        accept.value=false
+
+      onReset () {
+        email.value = null
+        mdp.value = null
+
+        emailRef.value.resetValidation()
+        mdpRef.value.resetValidation()
       }
     }
   }

@@ -6,6 +6,7 @@ import lLogin from 'layouts/loginLayout'
 import lLogged from 'layouts/MainLoggedInLayout'
 import lMessage from 'layouts/ListMessagesLayout'
 import lCorps from 'layouts/CorpsMessageLayout'
+import lModif from 'layouts/ProfilModifierLayout'
 
 /*
   Importation des différentes pages
@@ -27,6 +28,7 @@ import pConference from 'pages/ConferenceEventPage'
 import pRando from 'pages/RandoEventPage'
 import pBirthday from 'pages/BirthdayEventPage'
 import pBDE from 'pages/BdeEventPage'
+import pProfilModifier from 'pages/ProfilModifierPage'
 
 
 const routes = [
@@ -80,6 +82,15 @@ const routes = [
       {path: '', component: pMessage1},
     ]
   },
+
+  {
+    path:'/modifier',
+    component: lModif,
+    children: [
+      {path: '', component: pProfilModifier},
+    ]
+  },
+
 
   // Always leave this as last one,
   // but you can also remove it

@@ -33,7 +33,7 @@ git clone https://github.com/Maminiainerick/app_faitafete.git
 quasar dev
 ```
 
-## Wiki du projet
+## Documentation du projet
 Pour plus d'informations sur le projet, merci de vous suivre [ce lien]()
 
 Toute la documentation de `Quasar` est disponible [ici](https://quasar.dev/)
