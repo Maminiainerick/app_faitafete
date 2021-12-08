@@ -9,6 +9,7 @@ import lListMessageSent from 'layouts/ListMessagesSentLayout'
 import lCorps from 'layouts/CorpsMessageLayout'
 import lModif from 'layouts/ProfilModifierLayout'
 import lMessageSent from 'layouts/CorpsMessageSentLayout'
+import lSignup from 'layouts/SignupLayout'
 
 /*
   Importation des différentes pages
@@ -34,6 +35,8 @@ import pRando from 'pages/RandoEventPage'
 import pBirthday from 'pages/BirthdayEventPage'
 import pBDE from 'pages/BdeEventPage'
 import pProfilModifier from 'pages/ProfilModifierPage'
+import pSignup2 from 'pages/SignUpPage2'
+import pModifyEvent from 'pages/ModifyEventPage'
 
 
 const routes = [
@@ -52,7 +55,6 @@ const routes = [
       {path: 'fbLog', component: pFacebookConnect},
       {path: 'ggLog', component: pGoogleConnect},
       {path:'/signUp', component:() => import ('pages/signUpPage.vue')},
-      {path:'/signUp2', component:()=> import ('pages/signUpPage2.vue')}
     ]
   },
   {
@@ -71,6 +73,7 @@ const routes = [
       {path: 'randonnee-Chartreuse', component: pRando},
       {path: 'anniversaire-Johann', component: pBirthday},
       {path: 'reunion-BDE', component: pBDE},
+      {path: 'modification-profil',component:pModifyEvent}
 
     ]
   },
@@ -109,6 +112,14 @@ const routes = [
     component: lModif,
     children: [
       {path: '', component: pProfilModifier},
+    ]
+  },
+
+  {
+    path:'/Signup2',
+    component: lSignup,
+    children: [
+      {path: '', component: pSignup2},
     ]
   },
 
