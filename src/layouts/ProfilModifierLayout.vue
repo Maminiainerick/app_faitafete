@@ -21,7 +21,7 @@
             to="/loggedin/profile"
           >
             <q-avatar size="42px">
-              <img src="https://cdn-s-www.estrepublicain.fr/images/BFFFE250-24DD-44A1-B140-6A9229B524FB/NW_raw/photo-dr-1573744884.jpg">
+              <img src="../assets/pascal.jpg">
             </q-avatar>
           </q-btn>
         </div>
