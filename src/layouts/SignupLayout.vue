@@ -18,12 +18,9 @@
         <div>
           <q-btn
             round
+            icon="eva-person-outline"
             to="/loggedin/profile"
-          >
-            <q-avatar size="42px">
-              <img src="https://cdn.quasar.dev/img/avatar2.jpg">
-            </q-avatar>
-          </q-btn>
+          />
         </div>
       </q-toolbar>
     </q-header>
@@ -46,8 +43,12 @@
                   <q-btn
                     flat
                     round
+                    v-model="leftDrawerOpen"
                     size="10px"
                   >
+                    <q-avatar size="20px" icon="close">
+
+                    </q-avatar>
                   </q-btn>
                 </div>
               </div>
@@ -56,16 +57,14 @@
                   <q-btn
                     round
                     to="/loggedin/profile"
+                    icon="eva-person-outline"
                   >
-                    <q-avatar size="50px">
-                      <img src="https://cdn.quasar.dev/img/avatar2.jpg">
-                    </q-avatar>
                   </q-btn>
                 </div>
               </div>
               <div class="col-4">
                 <div class=" text-h6 text-bold">
-                  Johann
+                  User1
                 </div>
                 <div class="text-info">
                   <q-item clickable to="/" dense>
@@ -81,7 +80,7 @@
         <q-list>
 
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple :to="menuItem.root">
+            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon"/>
               </q-item-section>
@@ -121,20 +120,22 @@ export default defineComponent({
       {
         icon: 'calendar_today',
         label: 'Mes événements',
-        root: '/loggedin/myevents',
-        separator: false
+        separator: true
       },
       {
         icon: 'view_agenda',
         label: 'Mon agenda',
-        root: '/loggedin/myagenda',
         separator: false
       },
       {
         icon: 'message',
         label: 'Ma messagerie',
-        root: '/message',
         separator: false
+      },
+      {
+        icon: 'settings',
+        label: 'Paramètres',
+        separator: true
       }
     ]
 
