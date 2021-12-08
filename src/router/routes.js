@@ -5,8 +5,10 @@ import lMainStandard from 'layouts/MainStandardLayout'
 import lLogin from 'layouts/loginLayout'
 import lLogged from 'layouts/MainLoggedInLayout'
 import lMessage from 'layouts/ListMessagesLayout'
+import lListMessageSent from 'layouts/ListMessagesSentLayout'
 import lCorps from 'layouts/CorpsMessageLayout'
 import lModif from 'layouts/ProfilModifierLayout'
+import lMessageSent from 'layouts/CorpsMessageSentLayout'
 import lSignup from 'layouts/SignupLayout'
 
 /*
@@ -16,6 +18,7 @@ import pStandardIndex from 'pages/StandardIndexPage'
 import pLogin from 'pages/loginPage'
 import pLoggedIndex from 'pages/IndexConnectedPage'
 import pProfile from 'pages/ProfilePage'
+import pProfileSent from 'pages/ProfileSentPage'
 import pFacebookConnect from 'pages/LinkProfileFacebookPage'
 import pGoogleConnect from 'pages/LinkProfileGooglePage'
 import pMyEvents from 'pages/ListMyEventsPage'
@@ -24,6 +27,8 @@ import pCreate from 'pages/CreateEventPage'
 import pAgenda from 'pages/AgendaPage'
 import pMessages from 'pages/ListMessagesPage'
 import pMessage1 from 'pages/MessagePage'
+import pMessage2 from 'pages/MessageSentPage'
+import pMessageSent from 'pages/ListMessagesSentPage'
 import pEmptyEvent from 'pages/EmptyMyEvents'
 import pConference from 'pages/ConferenceEventPage'
 import pRando from 'pages/RandoEventPage'
@@ -58,6 +63,7 @@ const routes = [
     children: [
       {path: 'index', component: pLoggedIndex},
       {path: 'profile', component: pProfile},
+      {path: 'profilesent', component: pProfileSent},
       {path: 'myevents', component: pMyEvents},
       {path: 'modifprofile', component: pModifProfile},
       {path: 'createvents', component: pCreate},
@@ -79,10 +85,25 @@ const routes = [
     ]
   },
   {
+    path: '/messagesent',
+    component: lListMessageSent,
+    children: [
+      {path: '', component: pMessageSent},
+    ]
+  },
+  {
+    path: '/corpsent',
+    component: lMessageSent,
+    children: [
+      {path: 'sent', component: pMessage2}
+    ]
+  },
+  {
     path:'/corps',
     component: lCorps,
     children: [
       {path: '', component: pMessage1},
+
     ]
   },
 

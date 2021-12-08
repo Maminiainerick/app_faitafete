@@ -6,7 +6,7 @@
         <q-toolbar-title>
           <q-item
             clickable
-            to="/message"
+            to="/messagesent"
           >
             <q-avatar>
               <img src="../assets/man1.png">

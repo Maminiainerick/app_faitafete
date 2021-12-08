@@ -37,7 +37,7 @@
     <q-card-section class="q-pa-md row items-start q-gutter-md">
 
       <!--Carte événement Conférence Emmanuel Macron-->
-      <q-card class="my-card">
+      <q-card v-ripple class="my-card">
         <q-img :ratio="16/9"
                src="https://img.20mn.fr/IWiMLh_hRfmDkHwVUZ10Dg/640x410_emmanuel-macron-conference-presse-salle-fetes-elysee-25-avril-2019.jpg"/>
         <q-card-section>

@@ -19,7 +19,7 @@
           clickable
           v-close-popup
           @click="onItemClick"
-          to="/loggedin/myevents"
+          to="/loggedin/myagenda"
         >
           <q-item-section>
             <q-item-label>Mon agenda</q-item-label>

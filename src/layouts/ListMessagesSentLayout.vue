@@ -1,18 +1,13 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header elevated class="bg-primary text-white">
+    <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
           <q-item
             clickable
-            to="/message"
-          >
-            <q-avatar>
-              <img src="../assets/man1.png">
-            </q-avatar>
-            Guy Tard
-          </q-item>
+            to="/loggedin/profilesent"/>
+          Messagerie
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -20,7 +15,6 @@
     <q-page-container>
       <router-view/>
     </q-page-container>
-
 
   </q-layout>
 </template>
