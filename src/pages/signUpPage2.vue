@@ -1,76 +1,92 @@
 <template>
-  <q-form @submit.prevent="submitForm">
-    <q-input
-      outlined
-      v-model="form.name"
-      label="Nom d'utilisateur"
-      class="q-my-md"
-      :rules="[ val => val.length >= 4 || 'Minimum 4 caractère']"
-    />
+  <q-page padding>
+    <q-card class="my-card" flat>
+      <q-item class="justify-center">
+        <q-uploader
+          url="http://localhost:4444/upload"
+          label="Photo de profil"
+          color="primary"
+          style="max-width: 70%"
+        />
+      </q-item>
+    </q-card>
+    <div class="q-pa-md">
+      <q-form @submit="onSubmit" @reset="onReset">
+        <q-input
+          v-model="nom"
+          label="Nom *"
+          counter
+          maxlength="50"
+          :rules="[val => !!val || 'Champ obligatoire']"/>
+        <q-input
+          v-model="prenom"
+          label="Prenom *"
+          counter
+          maxlength="50"
+          :rules="[val => !!val || 'Champ obligatoire']"/>
+        <q-input
+          filled
+          v-model="Telephone"
+          label="Telephone"
+          mask="## ## ## ## ##"
+          hint="Mask: ## ## ## ## ##" />
+        <q-input
+          v-model="description"
+          autogrow
+          label="Description"
+          counter
+          maxlength="250"
+          :rules="[val => !!val || 'Champ obligatoire']"/>
 
-    <q-input
-      outlined
-      v-model="form.email"
-      label="E-mail"
-      class="q-my-md"
-      :rules="[val => validateEmail(val) || 'Email invalide']"
-    />
+        <q-card flat>
+          <q-card-section>
+            <div class="text-center">
+              <q-btn label="Créer" type="submit" color="primary" @click="onSubmit" to="/loggedin/index"/>
+              <q-btn label="Annuler" type="reset" color="primary" flat class="q-ml-sm" @click="onReset"/>
+            </div>
+          </q-card-section>
+        </q-card>
 
-    <q-input
-      type="password"
-      outlined
-      v-model="form.password"
-      label="Mot de passe"
-      class="q-my-md"
-      :rules="[ val => val.length >= 4 || 'Minimum 4 caractère']"
-      lazy-rules
-    />
-
-    <q-input
-      type="password"
-      outlined
-      v-model="form.password_confirmation"
-      label="Confirmer le mot de passe"
-      class="q-my-md"
-      :rules="[ val => val === form.password || 'Les mots de passe sont différents']"
-      lazy-rules
-    />
-
-    <q-btn
-      type="submit"
-      color="primary"
-      label="Créer un compte"
-      to="/loggedin/index"
-    />
-  </q-form>
+      </q-form>
+    </div>
+  </q-page>
 </template>
 
 <script>
+import {useQuasar} from "quasar";
+import {ref} from "vue";
+
 export default {
-  name: 'EnregistrementForm',
-  data () {
+  setup() {
+    const $q = useQuasar()
     return {
-      form: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
+      nom: ref(''),
+      prenom: ref(''),
+      phone: ref(null),
+      description: ref(''),
+
+
+      onSubmit() {
+        $q.notify({
+          color: 'primary',
+          textColor: 'white',
+          icon: 'checked',
+          message: 'Evénement créé !'
+        })
+      },
+
+      onReset() {
+        nom.value = null
+        prenom.value = null
+        phone.value = null
+        description.value = null
+
+        nom.value.resetValidation()
+        prenom.value.resetValidation()
+        phone.value.resetValidation()
+        description.value.resetValidation()
       }
-    }
-  },
-  methods: {
-    submitForm () {
-      alert('Formulaire envoyé !')
-    },
-    validateEmail (email) {
-      // Source : https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return re.test(String(email).toLowerCase())
     }
   }
 }
 </script>
-
-<style>
-
-</style>
