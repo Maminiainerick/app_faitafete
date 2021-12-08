@@ -91,14 +91,7 @@
         </q-item>
       </q-card>
       <q-card style="background: rgba(239,143,136,0.29)">
-        <q-icon
-          name="looks_one"
-          class="absolute"
-          size="sm"
-          style="top: 0; right: 6px; transform: translateY(-50%);"
-          color="red"
-        />
-        <q-item clickable to="/message">
+        <q-item clickable to="/message/sent">
           <q-item-section>
             <div class="row">
               <div class="col-1">
@@ -142,30 +135,30 @@ export default {
         })
       },
       customBtn: function () {
-      $q.dialog({
-        title: 'Supprimer le profil',
-        message: 'Vous êtes sûr(e) de vouloir supprimer votre profil ?',
-        ok: {
-          push: true,
-          color: 'negative',
-          label: 'Oui, supprimer mon profil',
-          onclick: "document.location.href=\'http://localhost:8080/#/'"
-        },
-        cancel: {
-          push: true,
-          color: 'primary',
-          label: 'Annuler'
-        },
-        persistent: true
-      }).onOk(() => {
+        $q.dialog({
+          title: 'Supprimer le profil',
+          message: 'Vous êtes sûr(e) de vouloir supprimer votre profil ?',
+          ok: {
+            push: true,
+            color: 'negative',
+            label: 'Oui, supprimer mon profil',
+            onclick: "document.location.href=\'http://localhost:8080/#/'"
+          },
+          cancel: {
+            push: true,
+            color: 'primary',
+            label: 'Annuler'
+          },
+          persistent: true
+        }).onOk(() => {
 
-        // console.log('>>>> OK')
-      }).onCancel(() => {
-        // console.log('>>>> Cancel')
-      }).onDismiss(() => {
-        // console.log('I am triggered on both OK and Cancel')
-      })
-    }
+          // console.log('>>>> OK')
+        }).onCancel(() => {
+          // console.log('>>>> Cancel')
+        }).onDismiss(() => {
+          // console.log('I am triggered on both OK and Cancel')
+        })
+      }
     }
   }
 }
