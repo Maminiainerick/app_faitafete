@@ -24,7 +24,6 @@ import pGoogleConnect from 'pages/LinkProfileGooglePage'
 import pMyEvents from 'pages/ListMyEventsPage'
 import pModifProfile from 'pages/ModificationProfilePage'
 import pCreate from 'pages/CreateEventPage'
-import pAgenda from 'pages/AgendaPage'
 import pMessages from 'pages/ListMessagesPage'
 import pMessage1 from 'pages/MessagePage'
 import pMessage2 from 'pages/MessageSentPage'
@@ -79,7 +78,6 @@ const routes = [
       {path: 'myeventsmodify', component: pMyEventsModify},
       {path: 'modifprofile', component: pModifProfile},
       {path: 'createvents', component: pCreate},
-      {path: 'myagenda', component: pAgenda},
       {path: 'emptyevents', component: pEmptyEvent},
       {path: 'conference-Emmanuel-Macron-UGA', component: pConferenceConnected},
       {path: 'randonnee-Chartreuse', component: pRandoConnected},
