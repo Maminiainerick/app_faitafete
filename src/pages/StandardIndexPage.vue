@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <recherche-card/>
-    <liste-event-card/>
+    <liste-event-standard-card/>
   </q-page>
 </template>
 
@@ -9,9 +9,10 @@
 import { defineComponent } from 'vue';
 import RechercheCard from "components/rechercheCard";
 import ListeEventCard from "components/listeEventConnectedCard";
+import ListeEventStandardCard from "components/listeEventStandardCard";
 
 export default defineComponent({
   name: 'StandardIndex',
-  components: {ListeEventCard, RechercheCard}
+  components: {ListeEventStandardCard, RechercheCard}
 })
 </script>

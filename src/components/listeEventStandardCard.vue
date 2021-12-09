@@ -49,18 +49,18 @@
         </q-card-section>
         <q-separator/>
         <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-btn flat round icon="event" @click="inscriptionNecessaire=true"/>
           <q-space/>
           <q-btn flat round icon="eva-plus-circle">
             <q-menu cover auto-close>
               <q-list>
-                <q-item clickable to="/loggedin/randonnee-Chartreuse">
+                <q-item clickable to="/randonnee-Chartreuse">
                   <q-item-section>Plus d'informations</q-item-section>
                 </q-item>
                 <q-item clickable>
-                  <q-item-section @click="confirmPublicEvent=true">S'inscrire</q-item-section>
+                  <q-item-section @click="inscriptionNecessaire=true">S'inscrire</q-item-section>
                 </q-item>
-                <q-item clickable @click="showNotifAjoutAgenda">
+                <q-item clickable @click="inscriptionNecessaire=true">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
                 </q-item>
               </q-list>
@@ -78,18 +78,18 @@
         </q-card-section>
         <q-separator/>
         <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-btn flat round icon="event" @click="inscriptionNecessaire=true"/>
           <q-space/>
           <q-btn flat round icon="eva-plus-circle">
             <q-menu cover auto-close>
               <q-list>
-                <q-item clickable to="/loggedin/reunion-BDE">
+                <q-item clickable to="/reunion-BDE">
                   <q-item-section>Plus d'informations</q-item-section>
                 </q-item>
                 <q-item clickable>
-                  <q-item-section @click="confirmPrivateEvent=true">S'inscrire</q-item-section>
+                  <q-item-section @click="inscriptionNecessaire=true">S'inscrire</q-item-section>
                 </q-item>
-                <q-item clickable @click="showNotifAjoutAgenda">
+                <q-item clickable @click="inscriptionNecessaire=true">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
                 </q-item>
               </q-list>
@@ -108,18 +108,18 @@
         </q-card-section>
         <q-separator/>
         <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-btn flat round icon="event" @click="inscriptionNecessaire=true"/>
           <q-space/>
           <q-btn flat round icon="eva-plus-circle">
             <q-menu cover auto-close>
               <q-list>
-                <q-item clickable to="/loggedin/anniversaire-Johann">
+                <q-item clickable to="/anniversaire-Johann">
                   <q-item-section>Plus d'informations</q-item-section>
                 </q-item>
                 <q-item clickable>
-                  <q-item-section @click="confirmPrivateEvent=true">S'inscrire</q-item-section>
+                  <q-item-section @click="inscriptionNecessaire=true">S'inscrire</q-item-section>
                 </q-item>
-                <q-item clickable @click="showNotifAjoutAgenda">
+                <q-item clickable @click="inscriptionNecessaire=true">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
                 </q-item>
               </q-list>
@@ -138,18 +138,18 @@
         </q-card-section>
         <q-separator/>
         <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-btn flat round icon="event" @click="inscriptionNecessaire=true"/>
           <q-space/>
           <q-btn flat round icon="eva-plus-circle">
             <q-menu cover auto-close>
               <q-list>
-                <q-item clickable to="/loggedin/conference-Emmanuel-Macron-UGA">
+                <q-item clickable to="/conference-Emmanuel-Macron-UGA">
                   <q-item-section>Plus d'informations</q-item-section>
                 </q-item>
                 <q-item clickable>
-                  <q-item-section @click="confirmPublicEvent=true">S'inscrire</q-item-section>
+                  <q-item-section @click="inscriptionNecessaire=true">S'inscrire</q-item-section>
                 </q-item>
-                <q-item clickable @click="showNotifAjoutAgenda">
+                <q-item clickable @click="inscriptionNecessaire=true">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
                 </q-item>
               </q-list>
@@ -160,34 +160,19 @@
 
     </q-card-section>
 
-    <!--Boite de dialogue pour confirmer l'inscription à un événement privé-->
-    <q-dialog v-model="confirmPublicEvent" persistent transition-show="scale" transition-hide="scale">
-      <q-card class="bg-primary text-white" style="width: 300px">
+    <!--Boite de dialogue information création de compte nécessaire pour s'inscrire à un événement
+    ou ajouter événement à l'agenda-->
+    <q-dialog v-model="inscriptionNecessaire" persistent transition-show="scale" transition-hide="scale">
+      <q-card class="bg-dark text-white" style="width: 300px">
         <q-card-section>
-          <div class="text-h6">Confirmer inscription</div>
+          <div class="text-h6">Action impossible</div>
         </q-card-section>
         <q-card-section class="q-pt-none">
-          Vous êtes sur le point de vous inscrire à cet événement.
-          Merci de confirmer votre choix
+          Pour continuer, vous devez vous identifier.
         </q-card-section>
-        <q-card-actions align="right" class="bg-white text-primary">
-          <q-btn flat label="Confirmer inscription" @click="showNotifInscription" v-close-popup/>
-          <q-btn flat label="Annuler" v-close-popup/>
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
-
-    <!--Boite de dialogue pour confirmer l'inscription à un événement privé-->
-    <q-dialog v-model="confirmPrivateEvent" persistent transition-show="scale" transition-hide="scale">
-      <q-card class="bg-orange text-white" style="width: 300px">
-        <q-card-section>
-          <div class="text-h6">Evénement privé</div>
-        </q-card-section>
-        <q-card-section class="q-pt-none">
-          Ceci est un événement privé. Votre inscription sera soumise à la validation de l'organisateur
-        </q-card-section>
-        <q-card-actions align="right" class="bg-white text-orange">
-          <q-btn flat label="Confirmer inscription" @click="showNotifPrivateInscription" v-close-popup/>
+        <q-card-actions align="right" class="bg-white text-primary" vertical>
+          <q-btn flat label="Se connecter" to="/login" v-close-popup/>
+          <q-btn flat label="Créer un compte" to="/login/signUp" v-close-popup/>
           <q-btn flat label="Annuler" v-close-popup/>
         </q-card-actions>
       </q-card>
@@ -208,13 +193,13 @@ export default {
       Semaine: true,
       Proximite: true,
 
+
     })
     const $q = useQuasar()
 
 
     return {
-      confirmPublicEvent: ref(false),
-      confirmPrivateEvent: ref(false),
+      inscriptionNecessaire: ref(false),
       evenementRecent: ref(true),
       evenementSemaine: ref(true),
       evenementProximite: ref(true),
@@ -224,25 +209,6 @@ export default {
           .filter(type => event[type] === true)
           .join(', ')
       }),
-
-      showNotifAjoutAgenda: function () {
-        $q.notify({
-          message: 'Ajouté à votre agenda',
-          color: 'primary'
-        })
-      },
-      showNotifInscription: function () {
-        $q.notify({
-          message: 'Inscription enregistrée',
-          color: 'green'
-        })
-      },
-      showNotifPrivateInscription: function () {
-        $q.notify({
-          message: 'Inscription en attente',
-          color: 'orange-7'
-        })
-      }
     }
   }
 }

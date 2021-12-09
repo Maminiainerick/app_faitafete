@@ -6,7 +6,6 @@
         <q-item
           clickable
           to="/corps"
-          class="bg-teal-1"
         >
 
           <q-item-section avatar>
@@ -16,9 +15,9 @@
           </q-item-section>
 
           <q-item-section>
-            <q-item-label class="text-bold">Guy Tard</q-item-label>
-            <q-item-label class="text-bold text-black" caption :active="active">
-              Guy : Ok d'accord ! Je serai avec ma cop...
+            <q-item-label >Guy Tard</q-item-label>
+            <q-item-label caption>
+              Vous : Ça marche ! Merci !
             </q-item-label>
           </q-item-section>
         </q-item>

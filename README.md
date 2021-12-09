@@ -30,6 +30,7 @@ git clone https://github.com/Maminiainerick/app_faitafete.git
 2. Une fois téléchargé, entrez dans le répertoire du projet en ligne de commande
 3. Exécutez le projet en ligne de commande
 ```bash
+npm install
 quasar dev
 ```
 
