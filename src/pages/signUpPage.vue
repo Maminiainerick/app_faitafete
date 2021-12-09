@@ -32,8 +32,8 @@
               <q-toggle v-model="accept" label="I accept the license and terms" />
 
               <div>
-                <q-btn label="Submit" color="primary" @click="onSubmit" to="/Signup2"/>
-                <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+                <q-btn label="Suivant" color="primary" @click="onSubmit" to="/Signup2"/>
+                <q-btn label="Reset" type="reset" @click="onReset" color="primary" flat class="q-ml-sm" />
               </div>
             </form>
           </q-card-section>
