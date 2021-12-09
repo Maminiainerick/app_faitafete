@@ -75,7 +75,7 @@
         </q-item>
       </q-card>
       <q-card style="background: rgba(111,145,181,0.32)">
-        <q-item clickable to="/loggedin/myevents">
+        <q-item clickable to="/loggedin/emptyevents">
           <q-item-section>
             <div class="row">
               <div class="col-1">

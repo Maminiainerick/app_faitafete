@@ -14,7 +14,7 @@
       <q-card-section>
         <div class="text-info">
           <q-icon name="eva-calendar"/>
-          Samedi 20 Novembre 2021
+          Dimanche 12 Décembre 2021
         </div>
         <div class="text-info">
           <q-icon name="eva-pin"/>

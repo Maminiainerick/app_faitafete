@@ -62,7 +62,7 @@ export default {
     return {
       nom: ref(''),
       prenom: ref(''),
-      phone: ref(null),
+      telephone: ref(null),
       description: ref(''),
 
 
