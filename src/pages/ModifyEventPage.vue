@@ -2,7 +2,7 @@
   <q-page padding>
     <div class="text-h5 text-primary text-bold text-center">Modifier un événement</div>
     <div class="q-pa-md">
-    <q-form @submit="onSubmit" @reset="onReset">
+      <q-form @submit="onSubmit" @reset="onReset">
         <q-input
           v-model="titre"
           label="Titre de l'événement"
@@ -62,13 +62,12 @@
         <q-card flat>
           <q-card-section>
             <div class="text-center">
-              <q-btn label="Créer" type="submit" color="primary" @click="onSubmit" to="/loggedin/myevents"/>
+              <q-btn label="Modifier" type="submit" color="primary" @click="onSubmit" to="/loggedin/myevents"/>
               <q-btn label="Annuler" type="reset" color="primary" flat class="q-ml-sm" @click="onReset"
                      to="/loggedin/profile"/>
             </div>
           </q-card-section>
         </q-card>
-
       </q-form>
     </div>
   </q-page>
@@ -83,8 +82,8 @@ export default {
     const $q = useQuasar()
     return {
       titre: ref('Anniversaire Johann'),
-      date: ref('12/12/2021'),
-      lieu: ref('Bar à jeu'),
+      date: ref('2021-12-12'),
+      lieu: ref('Bar à jeux'),
       theme: ref(''),
       nbParticipants: ref('12'),
       description: ref(''),

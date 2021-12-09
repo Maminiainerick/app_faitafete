@@ -40,7 +40,7 @@
     <q-card-section class="q-pa-md row items-start q-gutter-md">
 
       <!--Carte événement Randonnée-->
-      <q-card class="my-card" v-show="evenementSemaine || evenementProximite">
+      <q-card v-ripple class="my-card" v-show="evenementSemaine || evenementProximite">
         <q-img :ratio="16/9"
                src="https://th.bing.com/th/id/R.f19126c6f1e60b6c469965ba475e1eae?rik=rmXhbCd5iHfLZg&riu=http%3a%2f%2fwww.douvres-la-delivrande.fr%2fimages%2factualite%2f1601471526-unnamed.jpg&ehk=d84ykc5kVuRWOW3fcGxsYYtY7R95mKX9C5XQGJuq4WQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"/>
         <q-card-section>
@@ -70,7 +70,7 @@
       </q-card>
 
       <!--Carte événement Réunion BDE-->
-      <q-card class="my-card" v-show="evenementProximite">
+      <q-card v-ripple class="my-card" v-show="evenementProximite">
         <q-img :ratio="16/9" src="https://th.bing.com/th/id/OIP.QEiQUSeDaKU5JWQKFrKdFQHaEK?pid=ImgDet&rs=1"/>
         <q-card-section>
           <div class="text-subtitle5">Réunion BDE Economie-Gestion</div>
@@ -99,7 +99,7 @@
       </q-card>
 
       <!--Carte événement Anniversaire de Johann-->
-      <q-card class="my-card" v-show="evenementRecent">
+      <q-card v-ripple class="my-card" v-show="evenementRecent">
         <q-img :ratio="16/9"
                src="https://th.bing.com/th/id/R.3f5ec62091a7e4d7ba76a95129774587?rik=WKhPikqETLa%2f%2fg&pid=ImgRaw&r=0"/>
         <q-card-section>
