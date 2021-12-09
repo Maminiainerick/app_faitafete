@@ -41,6 +41,7 @@ import pBDEStandard from 'pages/BdeEventPageS'
 import pProfilModifier from 'pages/ProfilModifierPage'
 import pSignup2 from 'pages/SignUpPage2'
 import pModifyEvent from 'pages/ModifyEventPage'
+import pManageEvent from 'pages/EventManagementPage'
 
 
 const routes = [
@@ -81,7 +82,8 @@ const routes = [
       {path: 'randonnee-Chartreuse', component: pRandoConnected},
       {path: 'anniversaire-Johann', component: pBirthdayConnected},
       {path: 'reunion-BDE', component: pBDEConnected},
-      {path: 'modification-profil',component:pModifyEvent}
+      {path: 'modification-event',component:pModifyEvent},
+      {path: 'event-management',component:pManageEvent},
 
     ]
   },
