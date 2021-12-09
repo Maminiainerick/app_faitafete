@@ -46,7 +46,7 @@
 
           </q-card-actions>
           <q-card-section class="text-center q-pa-none">
-            <q-btn flat class="text-red-4" label="Créer un compte" no-caps to="/signUp"/>
+            <q-btn flat class="text-red-4" label="Créer un compte" no-caps to="/login/signUp"/>
           </q-card-section>
 
           <q-card-section class ="text-center q-pa-none">
