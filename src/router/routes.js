@@ -30,10 +30,14 @@ import pMessage1 from 'pages/MessagePage'
 import pMessage2 from 'pages/MessageSentPage'
 import pMessageSent from 'pages/ListMessagesSentPage'
 import pEmptyEvent from 'pages/EmptyMyEvents'
-import pConference from 'pages/ConferenceEventPage'
-import pRando from 'pages/RandoEventPage'
-import pBirthday from 'pages/BirthdayEventPage'
-import pBDE from 'pages/BdeEventPage'
+import pConferenceConnected from 'pages/ConferenceEventPageC'
+import pRandoConnected from 'pages/RandoEventPageC'
+import pBirthdayConnected from 'pages/BirthdayEventPageC'
+import pBDEConnected from 'pages/BdeEventPageC'
+import pConferenceStandard from 'pages/ConferenceEventPageS'
+import pRandoStandard from 'pages/RandoEventPageS'
+import pBirthdayStandard from 'pages/BirthdayEventPageS'
+import pBDEStandard from 'pages/BdeEventPageS'
 import pProfilModifier from 'pages/ProfilModifierPage'
 import pSignup2 from 'pages/SignUpPage2'
 import pModifyEvent from 'pages/ModifyEventPage'
@@ -45,6 +49,10 @@ const routes = [
     component: lMainStandard,
     children: [
       {path: '', component: pStandardIndex},
+      {path: 'conference-Emmanuel-Macron-UGA', component: pConferenceStandard},
+      {path: 'randonnee-Chartreuse', component: pRandoStandard},
+      {path: 'anniversaire-Johann', component: pBirthdayStandard},
+      {path: 'reunion-BDE', component: pBDEStandard},
     ]
   },
   {
@@ -54,7 +62,7 @@ const routes = [
       {path: '', component: pLogin},
       {path: 'fbLog', component: pFacebookConnect},
       {path: 'ggLog', component: pGoogleConnect},
-      {path:'/signUp', component:() => import ('pages/signUpPage.vue')},
+      {path: 'signUp', component:() => import ('pages/signUpPage.vue')},
     ]
   },
   {
@@ -69,10 +77,10 @@ const routes = [
       {path: 'createvents', component: pCreate},
       {path: 'myagenda', component: pAgenda},
       {path: 'emptyevents', component: pEmptyEvent},
-      {path: 'conference-Emmanuel-Macron-UGA', component: pConference},
-      {path: 'randonnee-Chartreuse', component: pRando},
-      {path: 'anniversaire-Johann', component: pBirthday},
-      {path: 'reunion-BDE', component: pBDE},
+      {path: 'conference-Emmanuel-Macron-UGA', component: pConferenceConnected},
+      {path: 'randonnee-Chartreuse', component: pRandoConnected},
+      {path: 'anniversaire-Johann', component: pBirthdayConnected},
+      {path: 'reunion-BDE', component: pBDEConnected},
       {path: 'modification-profil',component:pModifyEvent}
 
     ]
