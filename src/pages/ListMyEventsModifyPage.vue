@@ -3,30 +3,30 @@
     <div class="text-primary text-center text-bold text-h5">Mes événements</div>
     <q-card bordered>
       <q-card-section>
-        <div class="text-h5 text-bold">Anniversaire Johann</div>
+        <div class="text-h5 text-bold">Anniversaire Johann et Pascal</div>
         <div class="text-caption text-grey">
           <q-icon
             name="eva-calendar"
           />
-          12 Décembre 2021
+          17 Décembre 2021
         </div>
         <div class="text-caption text-grey">
           <q-icon
             name="eva-pin"
           />
-          Parc Paul Mistral, Grenoble
+          Chez Pascal
         </div>
         <div class="text-caption text-grey">
           <q-icon
             name="eva-text-outline"
           />
-          25 ans, ça se fête !
+          Nous vous invitons à notre soirée d'anniversaire!! Hate de tous vous voir!
         </div>
         <div class="text-caption text-grey">
           <q-icon
             name="eva-people"
           />
-          Nombre de participants : 12
+          Nombre de participants : 24
         </div>
       </q-card-section>
       <q-card-actions>

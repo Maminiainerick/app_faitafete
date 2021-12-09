@@ -62,17 +62,11 @@ export default {
     return {
       nom: ref(''),
       prenom: ref(''),
-      phone: ref(null),
+      telephone: ref(null),
       description: ref(''),
 
 
       onSubmit() {
-        $q.notify({
-          color: 'primary',
-          textColor: 'white',
-          icon: 'checked',
-          message: 'Evénement créé !'
-        })
       },
 
       onReset() {

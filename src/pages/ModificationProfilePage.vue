@@ -40,6 +40,7 @@
                   <q-input
                     borderless
                     v-model="phone"
+                    mask="## ## ## ## ##"
                   >
                     <template v-slot:prepend>
                       <q-icon size="xs" name="eva-phone"/>
