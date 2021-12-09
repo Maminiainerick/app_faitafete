@@ -123,6 +123,13 @@
         </q-card>
       </q-list>
     </div>
+    <div class="q-pa-md q-gutter-sm">
+      <q-btn
+        color="primary"
+        to="/loggedin/myevents"
+        label="Enregistrer"
+      />
+    </div>
 
     <!--Boite de dialogue confirmation suppression d'un participant-->
     <q-dialog v-model="confirmDelete" persistent transition-show="scale" transition-hide="scale">
