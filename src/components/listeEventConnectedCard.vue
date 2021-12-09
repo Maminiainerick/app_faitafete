@@ -39,38 +39,8 @@
     <!--Liste des événements existants-->
     <q-card-section class="q-pa-md row items-start q-gutter-md">
 
-      <!--Carte événement Conférence Emmanuel Macron-->
-      <q-card v-ripple class="my-card" v-show="evenementRecent">
-        <q-img :ratio="16/9"
-               src="https://img.20mn.fr/IWiMLh_hRfmDkHwVUZ10Dg/640x410_emmanuel-macron-conference-presse-salle-fetes-elysee-25-avril-2019.jpg"/>
-        <q-card-section>
-          <div class="text-subtitle5">Conférence avec Emmanuel Macron</div>
-          <div class="text-info">Samedi 18 dec</div>
-        </q-card-section>
-        <q-separator/>
-        <q-card-actions>
-          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
-          <q-space/>
-          <q-btn flat round icon="eva-plus-circle">
-            <q-menu cover auto-close>
-              <q-list>
-                <q-item clickable to="/loggedin/conference-Emmanuel-Macron-UGA">
-                  <q-item-section>Plus d'informations</q-item-section>
-                </q-item>
-                <q-item clickable>
-                  <q-item-section @click="confirmPublicEvent=true">S'inscrire</q-item-section>
-                </q-item>
-                <q-item clickable @click="showNotifAjoutAgenda">
-                  <q-item-section>Ajouter à mon agenda</q-item-section>
-                </q-item>
-              </q-list>
-            </q-menu>
-          </q-btn>
-        </q-card-actions>
-      </q-card>
-
       <!--Carte événement Randonnée-->
-      <q-card class="my-card" v-show="evenementSemaine">
+      <q-card class="my-card" v-show="evenementSemaine || evenementProximite">
         <q-img :ratio="16/9"
                src="https://th.bing.com/th/id/R.f19126c6f1e60b6c469965ba475e1eae?rik=rmXhbCd5iHfLZg&riu=http%3a%2f%2fwww.douvres-la-delivrande.fr%2fimages%2factualite%2f1601471526-unnamed.jpg&ehk=d84ykc5kVuRWOW3fcGxsYYtY7R95mKX9C5XQGJuq4WQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"/>
         <q-card-section>
@@ -89,6 +59,35 @@
                 </q-item>
                 <q-item clickable>
                   <q-item-section @click="confirmPublicEvent=true">S'inscrire</q-item-section>
+                </q-item>
+                <q-item clickable @click="showNotifAjoutAgenda">
+                  <q-item-section>Ajouter à mon agenda</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+        </q-card-actions>
+      </q-card>
+
+      <!--Carte événement Réunion BDE-->
+      <q-card class="my-card" v-show="evenementProximite">
+        <q-img :ratio="16/9" src="https://th.bing.com/th/id/OIP.QEiQUSeDaKU5JWQKFrKdFQHaEK?pid=ImgDet&rs=1"/>
+        <q-card-section>
+          <div class="text-subtitle5">Réunion BDE Economie-Gestion</div>
+          <div class="text-info">Jeudi 16 dec</div>
+        </q-card-section>
+        <q-separator/>
+        <q-card-actions>
+          <q-btn flat round icon="event" @click="showNotifAjoutAgenda"/>
+          <q-space/>
+          <q-btn flat round icon="eva-plus-circle">
+            <q-menu cover auto-close>
+              <q-list>
+                <q-item clickable to="/loggedin/reunion-BDE">
+                  <q-item-section>Plus d'informations</q-item-section>
+                </q-item>
+                <q-item clickable>
+                  <q-item-section @click="confirmPrivateEvent=true">S'inscrire</q-item-section>
                 </q-item>
                 <q-item clickable @click="showNotifAjoutAgenda">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
@@ -129,12 +128,13 @@
         </q-card-actions>
       </q-card>
 
-      <!--Carte événement Réunion BDE-->
-      <q-card class="my-card" v-show="evenementProximite">
-        <q-img :ratio="16/9" src="https://th.bing.com/th/id/OIP.QEiQUSeDaKU5JWQKFrKdFQHaEK?pid=ImgDet&rs=1"/>
+      <!--Carte événement Conférence Emmanuel Macron-->
+      <q-card v-ripple class="my-card" v-show="evenementRecent || evenementProximite">
+        <q-img :ratio="16/9"
+               src="https://img.20mn.fr/IWiMLh_hRfmDkHwVUZ10Dg/640x410_emmanuel-macron-conference-presse-salle-fetes-elysee-25-avril-2019.jpg"/>
         <q-card-section>
-          <div class="text-subtitle5">Réunion BDE Economie-Gestion</div>
-          <div class="text-info">Jeudi 16 dec</div>
+          <div class="text-subtitle5">Conférence avec Emmanuel Macron</div>
+          <div class="text-info">Samedi 18 dec</div>
         </q-card-section>
         <q-separator/>
         <q-card-actions>
@@ -143,11 +143,11 @@
           <q-btn flat round icon="eva-plus-circle">
             <q-menu cover auto-close>
               <q-list>
-                <q-item clickable to="/loggedin/reunion-BDE">
+                <q-item clickable to="/loggedin/conference-Emmanuel-Macron-UGA">
                   <q-item-section>Plus d'informations</q-item-section>
                 </q-item>
                 <q-item clickable>
-                  <q-item-section @click="confirmPrivateEvent=true">S'inscrire</q-item-section>
+                  <q-item-section @click="confirmPublicEvent=true">S'inscrire</q-item-section>
                 </q-item>
                 <q-item clickable @click="showNotifAjoutAgenda">
                   <q-item-section>Ajouter à mon agenda</q-item-section>
