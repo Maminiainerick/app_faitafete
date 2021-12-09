@@ -67,12 +67,6 @@ export default {
 
 
       onSubmit() {
-        $q.notify({
-          color: 'primary',
-          textColor: 'white',
-          icon: 'checked',
-          message: 'Evénement créé !'
-        })
       },
 
       onReset() {

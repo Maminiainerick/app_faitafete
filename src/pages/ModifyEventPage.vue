@@ -62,7 +62,7 @@
         <q-card flat>
           <q-card-section>
             <div class="text-center">
-              <q-btn label="Modifier" type="submit" color="primary" @click="onSubmit" to="/loggedin/myevents"/>
+              <q-btn label="Modifier" type="submit" color="primary" @click="onSubmit" to="/loggedin/myeventsmodify"/>
               <q-btn label="Annuler" type="reset" color="primary" flat class="q-ml-sm" @click="onReset"
                      to="/loggedin/profile"/>
             </div>
@@ -97,7 +97,7 @@ export default {
           color: 'primary',
           textColor: 'white',
           icon: 'checked',
-          message: 'Evénement créé !'
+          message: 'Evénement modifié !'
         })
       },
 
