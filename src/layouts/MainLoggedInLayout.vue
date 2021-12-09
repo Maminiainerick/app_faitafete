@@ -42,14 +42,6 @@
           <div class="q-pa-md">
             <div class="column" style="height: 150px">
               <div class="col-4">
-                <div>
-                  <q-btn
-                    flat
-                    round
-                    size="10px"
-                  >
-                  </q-btn>
-                </div>
               </div>
               <div class="col-4">
                 <div>
@@ -122,12 +114,6 @@ export default defineComponent({
         icon: 'calendar_today',
         label: 'Mes événements',
         root: '/loggedin/myevents',
-        separator: false
-      },
-      {
-        icon: 'view_agenda',
-        label: 'Mon agenda',
-        root: '/loggedin/myagenda',
         separator: false
       },
       {
