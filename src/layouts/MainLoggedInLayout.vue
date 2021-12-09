@@ -113,7 +113,7 @@ export default defineComponent({
       {
         icon: 'calendar_today',
         label: 'Mes événements',
-        root: '/loggedin/myevents',
+        root: '/loggedin/emptyevents',
         separator: false
       },
       {

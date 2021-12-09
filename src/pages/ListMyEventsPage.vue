@@ -14,7 +14,13 @@
           <q-icon
             name="eva-pin"
           />
-          Bar à jeux
+          Parc Paul Mistral, Grenoble
+        </div>
+        <div class="text-caption text-grey">
+          <q-icon
+            name="eva-text-outline"
+          />
+          25 ans, ça se fête !
         </div>
         <div class="text-caption text-grey">
           <q-icon
