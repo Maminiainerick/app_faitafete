@@ -30,6 +30,7 @@ import pMessage1 from 'pages/MessagePage'
 import pMessage2 from 'pages/MessageSentPage'
 import pMessageSent from 'pages/ListMessagesSentPage'
 import pEmptyEvent from 'pages/EmptyMyEvents'
+import pMyEventsModify from 'pages/ListMyEventsModifyPage'
 import pConferenceConnected from 'pages/ConferenceEventPageC'
 import pRandoConnected from 'pages/RandoEventPageC'
 import pBirthdayConnected from 'pages/BirthdayEventPageC'
@@ -42,6 +43,7 @@ import pProfilModifier from 'pages/ProfilModifierPage'
 import pSignup2 from 'pages/SignUpPage2'
 import pModifyEvent from 'pages/ModifyEventPage'
 import pManageEvent from 'pages/EventManagementPage'
+
 
 
 const routes = [
@@ -74,6 +76,7 @@ const routes = [
       {path: 'profile', component: pProfile},
       {path: 'profilesent', component: pProfileSent},
       {path: 'myevents', component: pMyEvents},
+      {path: 'myeventsmodify', component: pMyEventsModify},
       {path: 'modifprofile', component: pModifProfile},
       {path: 'createvents', component: pCreate},
       {path: 'myagenda', component: pAgenda},
