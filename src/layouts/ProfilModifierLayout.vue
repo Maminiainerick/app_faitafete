@@ -128,19 +128,9 @@ export default defineComponent({
         separator: true
       },
       {
-        icon: 'view_agenda',
-        label: 'Mon agenda',
-        separator: false
-      },
-      {
         icon: 'message',
         label: 'Ma messagerie',
         separator: false
-      },
-      {
-        icon: 'settings',
-        label: 'Paramètres',
-        separator: true
       }
     ]
 

@@ -14,17 +14,6 @@
             <q-item-label>Créer un événement</q-item-label>
           </q-item-section>
         </q-item>
-
-        <q-item
-          clickable
-          v-close-popup
-          @click="onItemClick"
-          to="/loggedin/myagenda"
-        >
-          <q-item-section>
-            <q-item-label>Mon agenda</q-item-label>
-          </q-item-section>
-        </q-item>
       </q-list>
     </q-btn-dropdown>
   </div>

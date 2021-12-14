@@ -4,15 +4,16 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <q-item
+          <q-btn
             clickable
+            flat
             to="/message"
-          >
+            icon="eva-arrow-back-outline"
+          />
             <q-avatar>
               <img src="../assets/man1.png">
             </q-avatar>
             Guy Tard
-          </q-item>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
