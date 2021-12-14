@@ -3,10 +3,14 @@
 
     <q-header elevated>
       <q-toolbar>
+
         <q-toolbar-title>
-          <q-item
+          <q-btn
             clickable
-            to="/loggedin/profilesent"/>
+            flat
+            to="/loggedin/profilesent"
+            icon="eva-close-outline"
+          />
           Messagerie
         </q-toolbar-title>
       </q-toolbar>
