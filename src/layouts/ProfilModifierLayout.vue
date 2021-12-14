@@ -93,7 +93,6 @@
                 {{ menuItem.label }}
               </q-item-section>
             </q-item>
-            <q-separator :key="'sep' + index" v-if="menuItem.separator"/>
           </template>
 
         </q-list>
