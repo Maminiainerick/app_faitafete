@@ -35,6 +35,6 @@ quasar dev
 ```
 
 ## Documentation du projet
-Pour plus d'informations sur le projet, merci de vous suivre [ce lien]()
+Pour plus d'informations sur le projet, merci de vous suivre [ce lien](https://drive.google.com/drive/folders/1eivTwSQUNn504stH8G1-3aHeB2ghDi26?usp=sharing)
 
 Toute la documentation de `Quasar` est disponible [ici](https://quasar.dev/)
