@@ -13,12 +13,6 @@
     <div class="q-pa-md">
       <q-form @submit="onSubmit" @reset="onReset">
         <q-input
-          v-model="nom"
-          label="Nom *"
-          counter
-          maxlength="50"
-          :rules="[val => !!val || 'Champ obligatoire']"/>
-        <q-input
           v-model="prenom"
           label="Prenom *"
           counter
@@ -60,7 +54,6 @@ export default {
   setup() {
     const $q = useQuasar()
     return {
-      nom: ref(''),
       prenom: ref(''),
       telephone: ref(null),
       description: ref(''),
@@ -70,12 +63,10 @@ export default {
       },
 
       onReset() {
-        nom.value = null
         prenom.value = null
         phone.value = null
         description.value = null
 
-        nom.value.resetValidation()
         prenom.value.resetValidation()
         phone.value.resetValidation()
         description.value.resetValidation()

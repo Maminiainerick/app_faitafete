@@ -7,7 +7,7 @@
           <q-btn
             clickable
             flat
-            to="/loggedin/profilesent"
+            to="/loggedin/profile"
             icon="eva-close-outline"
           />
           Messagerie

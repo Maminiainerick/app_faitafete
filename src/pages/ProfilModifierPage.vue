@@ -58,22 +58,6 @@
     </div>
     <div class="q-pa-md items-start q-gutter-md">
       <q-card style="background: rgba(239,143,136,0.29)">
-        <q-item clickable to="/loggedin/myagenda">
-          <q-item-section>
-            <div class="row">
-              <div class="col-1">
-                <q-icon name="eva-calendar"/>
-              </div>
-              <div class="col-11">
-                <div class="text-info text-black">
-                  Mon agenda
-                </div>
-              </div>
-            </div>
-          </q-item-section>
-        </q-item>
-      </q-card>
-      <q-card style="background: rgba(111,145,181,0.32)">
         <q-item clickable to="/loggedin/myevents">
           <q-item-section>
             <div class="row">
@@ -89,8 +73,8 @@
           </q-item-section>
         </q-item>
       </q-card>
-      <q-card style="background: rgba(239,143,136,0.29)">
-        <q-item clickable to="/message">
+      <q-card style="background: rgba(111,145,181,0.32)">
+        <q-item clickable to="/messagesent">
           <q-item-section>
             <div class="row">
               <div class="col-1">
